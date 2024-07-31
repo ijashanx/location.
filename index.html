@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Based Access</title>
+    <script>
+        function askForLocation() {
+            const location = prompt("Enter your location (Punjab, Haryana, Chandigarh):");
+
+            if (location && (location.toLowerCase() === "punjab" || location.toLowerCase() === "haryana" || location.toLowerCase() === "chandigarh")) {
+                const username = prompt("Enter your username:");
+                const password = prompt("Enter your password:");
+                const validUsername = "Jashanpreet";
+                const validPassword = "Temp@123";
+                if (username === validUsername && password === validPassword) {
+                    alert("Access Granted! Redirecting to the map...");
+                    window.location.href = "https://maps.app.goo.gl/eGs6L5stxMGAyEvv5";
+                } else {
+                    alert("Wrong credentials.");
+                }
+            } else {
+                alert("Access denied.");
+            }
+        }
+    </script>
+    <style>
+    body{
+        background-color: rgb(1, 43, 29);
+    }
+    button{
+        height:150px;
+        width: 140px;
+        font-size:20px;
+        font-family: 'Times New Roman', Times, serif;
+        border-radius: 10px 10px 10px 10px;
+        
+    }
+    button:hover{
+        background-color:antiquewhite;
+        transform: translateX(-2px) translateY(-2px) translateY(-2px);
+        color: brown;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="map" style="text-align: center; margin-top: 20%; font-size: 2em;">
+        <button onclick="askForLocation()">ACCESS MAP</button>
+    </div>
+</body>
+</html>
